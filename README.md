@@ -6,32 +6,33 @@
 [![Latest Release](https://img.shields.io/github/release/mayswind/ezbookkeeping.svg?style=flat)](https://github.com/mayswind/ezbookkeeping/releases)
 
 ## Introduction
-ezBookkeeping is a lightweight personal bookkeeping app hosted by yourself. It can be deployed on almost all platforms, including Windows, macOS and Linux on x86, amd64 and ARM architectures. You can even deploy it on an raspberry device. It also supports many different databases, including sqlite and mysql. With docker, you can just deploy it via one command without complicated configuration.
+
+ezBookkeeping is a lightweight, self-hosted personal bookkeeping app for Windows, macOS, and Linux. It supports x86, amd64, and ARM architectures and can also run on a Raspberry device. The application works with multiple databases, such as SQLite and MySQL. With Docker, it can be deployed easily using a single command.
 
 Online Demo: [https://ezbookkeeping-demo.mayswind.net](https://ezbookkeeping-demo.mayswind.net)
 
 ## Features
-1. Open source & Self-hosted
-2. Lightweight & Fast
-3. Easy to install
-    * Docker support
-    * Multiple database support (SQLite, MySQL, PostgreSQL, etc.)
-    * Multiple operation system & hardware support (Windows, macOS, Linux & x86, amd64, ARM)
-4. User-friendly interface
-    * Both desktop and mobile UI
-    * Close to native app experience (for mobile device)
-    * Two-level account & two-level category support
-    * Plentiful preset categories
-    * Geographic location and map support
-    * Searching & filtering history records
-    * Data statistics
-    * Dark theme
-5. Multiple currency support & automatically updating exchange rates
-6. Multiple timezone support
-7. Multi-language support
-8. Two-factor authentication
-9. Application lock (PIN code / WebAuthn)
-10. Data import & export
+- **Open source & Self-hosted**
+- **Lightweight & Fast**
+- **Simple Installation**
+  - Supports Docker
+  - Works with SQLite, MySQL, PostgreSQL, and more
+  - Runs on Windows, macOS, and Linux (x86, amd64, ARM)
+- **User-Friendly Interface**
+  - Optimized for desktop and mobile
+  - Two-level account and category management
+  - Built-in categories
+  - Location-based tracking with maps
+  - Search and filter history records
+  - Data statistics
+  - Dark mode
+- **Financial Management**
+  - Multi-currency support with automatic exchange rate updates
+  - Timezone support
+- **Security & Data Management**
+  - Two-factor authentication
+  - App lock (PIN/WebAuthn)
+  - Import & export data
 
 ## Screenshots
 ### Desktop Version
@@ -41,54 +42,59 @@ Online Demo: [https://ezbookkeeping-demo.mayswind.net](https://ezbookkeeping-dem
 [![ezBookkeeping](https://raw.githubusercontent.com/wiki/mayswind/ezbookkeeping/img/mobile/en.png)](https://raw.githubusercontent.com/wiki/mayswind/ezbookkeeping/img/mobile/en.png)
 
 ## Installation
-### Ship with docker
-Visit [Docker Hub](https://hub.docker.com/r/mayswind/ezbookkeeping) to see all images and tags.
 
-Latest Release:
+### Using Docker
+To deploy with Docker, run:
 
-    $ docker run -p8080:8080 mayswind/ezbookkeeping
+```sh
+docker run -p8080:8080 mayswind/ezbookkeeping
+```
 
-Latest Daily Build:
+For the latest development build:
 
-    $ docker run -p8080:8080 mayswind/ezbookkeeping:latest-snapshot
+```sh
+docker run -p8080:8080 mayswind/ezbookkeeping:latest-snapshot
+```
 
-### Install from binary
-Latest release: [https://github.com/mayswind/ezbookkeeping/releases](https://github.com/mayswind/ezbookkeeping/releases)
+More images and tags are available on [Docker Hub](https://hub.docker.com/r/mayswind/ezbookkeeping).
 
-**Linux / macOS**
+### Installing from Binary
+Download the latest release from [GitHub Releases](https://github.com/mayswind/ezbookkeeping/releases) and run:
 
-    $ ./ezbookkeeping server run
+**Linux / macOS:**
+```sh
+./ezbookkeeping server run
+```
 
-**Windows**
+**Windows:**
+```sh
+.\ezbookkeeping.exe server run
+```
 
-    > .\ezbookkeeping.exe server run
+The app runs on port 8080 by default. Access it via `http://{YOUR_HOST_ADDRESS}:8080/`.
 
-ezBookkeeping will listen at port 8080 as default. Then you can visit `http://{YOUR_HOST_ADDRESS}:8080/` .
+### Building from Source
+Ensure you have [Golang](https://golang.org/), [GCC](http://gcc.gnu.org/), [Node.js](https://nodejs.org/), and [NPM](https://www.npmjs.com/) installed. Then, clone the repository and build:
 
-### Build from source
-Make sure you have [Golang](https://golang.org/), [GCC](http://gcc.gnu.org/), [Node.js](https://nodejs.org/) and [NPM](https://www.npmjs.com/) installed. Then download the source code, and follow these steps:
+**Linux / macOS:**
+```sh
+./build.sh package -o ezbookkeeping.tar.gz
+```
 
-**Linux / macOS**
+**Windows:**
+```sh
+.\build.bat package -o ezbookkeeping.zip
+```
 
-    $ ./build.sh package -o ezbookkeeping.tar.gz
+To build a Docker image, ensure [Docker](https://www.docker.com/) is installed, then run:
 
-All the files will be packaged in `ezbookkeeping.tar.gz`.
+```sh
+./build.sh docker
+```
 
-**Windows**
-
-    > .\build.bat package -o ezbookkeeping.zip
-
-All the files will be packaged in `ezbookkeeping.zip`.
-
-You can also build docker image, make sure you have [docker](https://www.docker.com/) installed, then follow these steps:
-
-**Linux**
-
-    $ ./build.sh docker
-
-## Documents
-1. [English](http://ezbookkeeping.mayswind.net)
-1. [简体中文 (Simplified Chinese)](http://ezbookkeeping.mayswind.net/zh_Hans)
+## Documentation
+- [English](http://ezbookkeeping.mayswind.net)
+- [简体中文 (Simplified Chinese)](http://ezbookkeeping.mayswind.net/zh_Hans)
 
 ## License
 [MIT](https://github.com/mayswind/ezbookkeeping/blob/master/LICENSE)
